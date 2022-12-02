@@ -4,10 +4,12 @@
   box-sizing: inherit;
 }
 
-html {
-  /* font-size: 62.5%; */
-  /* box-sizing: border-box; */
-}
+/* html {
+   font-size: 62.5%; 
+   box-sizing: border-box; 
+} */
+
+/* FOR MOBILE */
 
 body {
   font-family: "Nunito", sans-serif;
@@ -28,6 +30,8 @@ body {
   cursor: pointer;
   outline-offset: 4px;
   transition: filter 250ms;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 .button--shadow {
   position: absolute;
@@ -61,32 +65,52 @@ body {
   position: relative;
   padding: 12px 42px;
   border-radius: 12px;
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   color: white;
   background: hsl(345deg 100% 47%);
   will-change: transform;
-  transform: translateY(-4px);
+  transform: translateY(-12px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-.button--start:hover {
-  filter: brightness(110%);
-}
-.button--start:hover .button--front {
-  transform: translateY(-6px);
-  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-}
+
 .button--start:active .button--front {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   transition: transform 34ms;
 }
-.button--start:hover .button--shadow {
-  transform: translateY(4px);
-  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-}
+
 .button--start:active .button--shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
 .button--start:focus:not(:focus-visible) {
   outline: none;
+}
+
+/* FOR DESKTOP */
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: none;
+    background-color: red;
+  }
+  .button--front {
+    transform: translateY(-4px);
+  }
+
+  .button--start:hover .button--front {
+    transform: translateY(-12px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .button--start:hover .button--shadow {
+    transform: translateY(6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .button--start:active .button--front {
+    transform: translateY(-4px);
+    transition: transform 34ms;
+  }
+
+  .button--start:active .button--shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
 }
