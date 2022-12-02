@@ -1,3 +1,4 @@
+/* FOR MOBILE */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +9,6 @@
    font-size: 62.5%; 
    box-sizing: border-box; 
 } */
-
-/* FOR MOBILE */
 
 body {
   font-family: "Nunito", sans-serif;
@@ -22,6 +21,7 @@ body {
   justify-content: center;
 }
 
+/* BUTTON  */
 .button--start {
   position: relative;
   border: none;
@@ -85,13 +85,16 @@ body {
 .button--start:focus:not(:focus-visible) {
   outline: none;
 }
+/* hide or show  */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-50vh);
+  transition: transform 500ms ease-in, opacity 300ms ease-in, visibility 600ms;
+}
 
 /* FOR DESKTOP */
 @media only screen and (min-width: 768px) {
-  body {
-    background-image: none;
-    background-color: red;
-  }
   .button--front {
     transform: translateY(-4px);
   }
@@ -108,7 +111,6 @@ body {
     transform: translateY(-4px);
     transition: transform 34ms;
   }
-
   .button--start:active .button--shadow {
     transform: translateY(1px);
     transition: transform 34ms;
